@@ -7,27 +7,31 @@ class hamadaAccessor:
         self.parent = parent
         self.parent.title('Hamada Accessor')
         self.parent.geometry('300x300+200+200')
-        self.aturKomponen()
+        self.frameUt = Frame(master=self.parent, bd=5)
+        self.frameUt.pack(fill=BOTH, expand=YES)
 
-    def aturKomponen(self):
-        frameUt = Frame(master=self.parent, bd=5)
-        frameUt.pack(fill=BOTH, expand=YES)
+        self.buttonSize = {'width': 8, 'height': 2}
 
-        buttonSize = {'width': 8, 'height': 2}
+        self.lblUsername: Label = Label(master=self.frameUt, text='Username   :').grid(row=1, column=1, sticky=W)
+        self.lblPass = Label(master=self.frameUt, text='Password    :').grid(row=2, column=1, sticky=W)
+        self.txtBoxUsername: Entry = Entry(master=self.frameUt)
+        self.txtBoxUsername.grid(row=1, column=2, sticky=W)
 
-        lblUsername = Label(master=frameUt, text='Username   :').grid(row=1, column=1, sticky=W)
-        lblPass = Label(master=frameUt, text='Password    :').grid(row=2, column=1, sticky=W)
-        txtBoxUsername = Entry(master=frameUt).grid(row=1, column=2, sticky=W)
+        self.txtBoxPass: Entry = Entry(master=self.frameUt, show='*')
+        self.txtBoxPass.grid(row=2, column=2, sticky=W)
 
-        txtBoxPass = Entry(master=frameUt, show='*').grid(row=2, column=2, sticky=W)
+        self.btnAccept = Button(master=self.frameUt, text='Login', command=self.login, cnf=self.buttonSize).grid(row=3, column=1, padx=10, pady=10)
 
-        btnAccept = Button(master=frameUt, text='Login', command=None, cnf=buttonSize).grid(row=3, column=1, padx=10,pady=10)
+    def login(self):
 
+        username : str = "admin"
+        password : str = "admin"
 
-
+        if self.txtBoxUsername.get() == username and self.txtBoxPass.get() == password:
+            mb.showinfo("Konfirmasi Masuk", "Anda Berhasil masuk !!!")
+        else:
+            mb.showinfo("Konfirmasi Masuk", "Anda Tidak Berhasil Masuk, Cek username atau password")
 
 root = Tk()
 app = hamadaAccessor(root)
 root.mainloop()
-
-
