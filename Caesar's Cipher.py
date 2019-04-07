@@ -5,16 +5,13 @@ pesen : str = input("Masukin Pesan anda")
 cipCount : int = int(input("masukkan angka peubah"))
 pesen_baru = ""
 
-if not (pesen.isalpha()):
-    print("input pesen nggak valid")
-    exit(1)
-
 if cipCount > 26:
     cipCount %= 26
 
-for i in pesen:
+for i in pesen.lower():
 
-    if i == " ":
+    if i == " " or i.isnumeric():
+        pesen_baru += i
         continue
 
     temporer = ord(i) + cipCount
