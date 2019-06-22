@@ -42,7 +42,11 @@ while bisa_pilih_lagi:
     else:
         total_harga += 50000 * kuantitas
 
-    bisa_pilih_lagi = True if input('Masukkan pilihan lagi (y/t) :') == 'y' else False
+    pil_sem = input('Masukkan pilihan lagi (y/t) :')
+    if pil_sem == 'y' or pil_sem == 'Y':
+        bisa_pilih_lagi = True
+    else:
+        bisa_pilih_lagi = False
     print()
 
 # print total harga dan input uang diterima
