@@ -2,6 +2,7 @@
 # NPM : 54418853
 # kelas : 1IA08
 
+
 def tampilkan_menu():
     print("Toko ABC Galaxy")
     print('-' * 15)
@@ -14,16 +15,13 @@ def tampilkan_menu():
 
 bisa_pilih_lagi = True
 total_harga = 0
-
-while (bisa_pilih_lagi):
-
-    tampilkan_menu()
-
+tampilkan_menu()
+while bisa_pilih_lagi:
     pilihan = int(input('Masukkan Pilihan Anda : '))
     if pilihan <= 0 or pilihan > 4:
         print('pilihan tidak valid, ulangi input...\n\n')
         continue
-    if (pilihan == 4):
+    if pilihan == 4:
         print('Keluar, bye...')
         exit(0)
 
