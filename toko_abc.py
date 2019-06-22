@@ -1,6 +1,3 @@
-# nama : Muhammad Rayhan Hamada Budiman
-# NPM : 54418853
-# kelas : 1IA08
 
 
 def tampilkan_menu():
