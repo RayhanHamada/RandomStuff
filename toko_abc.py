@@ -1,6 +1,8 @@
 
+pilih_lagi = True
+harga_total = 0
 
-def tampilkan_menu():
+def tampil_menu():
     print("Toko ABC Galaxy")
     print('-' * 15)
     print('1. Doll Toys Rp. 250.000,-')
@@ -10,33 +12,31 @@ def tampilkan_menu():
     print('-' * 15)
     print()
 
-bisa_pilih_lagi = True
-total_harga = 0
-while bisa_pilih_lagi:
-    tampilkan_menu()
-    pilihan = int(input('Masukkan Pilihan Anda : '))
-    if pilihan <= 0 or pilihan > 4:
-        print('pilihan tidak valid, ulangi input...\n\n')
+while pilih_lagi:
+    tampil_menu()
+    pilihan_mainan = int(input('Masukkan Pilihan Anda : '))
+    if pilihan_mainan <= 0 or pilihan_mainan > 4:
+        print('pilihan tidak boleh kurang dari atau sama dengan 0 atau lebih dari 4...\n\n')
         continue
-    if pilihan == 4:
-        print('Keluar, bye...')
+    if pilihan_mainan == 4:
+        print('Anda Keluar')
         exit(0)
 
-    kuantitas = int(input('Masukkan Kuantitas : '))
-    if kuantitas <= 0:
-        print('kuantitas tidak valid, ulangi input...\n\n')
+    quantity = int(input('Masukkan Quantity : '))
+    if quantity <= 0:
+        print('kuantitas tidak boleh kurang dari atau sama dengan 0, ulangi input...\n\n')
         continue
 
-    if pilihan == 1:
-        total_harga += 250000 * kuantitas
-    elif pilihan == 2:
-        total_harga += 150000 * kuantitas
+    if pilihan_mainan == 1:
+        harga_total += 250000 * quantity
+    elif pilihan_mainan == 2:
+        harga_total += 150000 * quantity
     else:
-        total_harga += 50000 * kuantitas
+        harga_total += 50000 * quantity
 
-    bisa_pilih_lagi = True if input('Masukkan pilihan lagi (y/t) :') == 'y' else False
+    pilih_lagi = True if input('Masukkan pilihan lagi (y/t) :') == 'y' else False
     print()
 
-print('Total harga belanja : Rp.{}'.format(total_harga))
+print('Total harga belanja : Rp.{}'.format(harga_total))
 uang_diterima = int(input('Uang yang diterima : Rp. '))
-print('Uang Kembalian : Rp.{}'.format(uang_diterima - total_harga))
+print('Uang Kembalian : Rp.{}'.format(uang_diterima - harga_total))
