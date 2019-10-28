@@ -38,9 +38,9 @@
              MOVE 1 TO WS-LOOP.
 
              *> tampilin kolom npm sama nama
-             DISPLAY "=============================================".
+             DISPLAY "---------------------------------------------".
              DISPLAY "NPM          NAMA".
-             DISPLAY "=============================================".
+             DISPLAY "---------------------------------------------".
 
              *> tampilin semua npm dan nama mahasiswa
              PERFORM VARYING WS-LOOP FROM 1 BY 1 UNTIL WS-LOOP > 5
