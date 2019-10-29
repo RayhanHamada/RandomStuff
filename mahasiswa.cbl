@@ -44,7 +44,11 @@
 
              *> tampilin semua npm dan nama mahasiswa
              PERFORM VARYING WS-LOOP FROM 1 BY 1 UNTIL WS-LOOP > 5
-                   DISPLAY NPM(WS-LOOP) '     ' NAMA(WS-LOOP)
+                   IF NPM(WS-LOOP) = 0 THEN
+                         DISPLAY ' '
+                   ELSE
+                         DISPLAY NPM(WS-LOOP) '     ' NAMA(WS-LOOP)
+                   END-IF
              END-PERFORM
             STOP RUN.
        END PROGRAM Daftar-Mahasiswa.
