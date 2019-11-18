@@ -2,7 +2,7 @@
 
 int main() {
     int daftarBanyakNilai[5] = {0, 0, 0, 0, 0}; 
-    for (int i = 0;i < 10; i+= 1){
+    for (int i = 0;i < 10; i++){
         char c;
 
         printf("Nilai Mahasiswa %d : ", i + 1);
